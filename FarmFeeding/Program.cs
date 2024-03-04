@@ -7,7 +7,7 @@ namespace FarmFeeding
     class Program
     {
         // Global variables
-        List<string> Species = new List<string>() { "Sheep", "Pig", "Cow", "Chicken" };
+        List<string> species = new List<string>() { "Sheep", "Pig", "Cow", "Chicken" };
         List<string> sheepBreed = new List<string>() { "Romney", "Hampshire", "Dorset", "Rambouillet" };
         List<string> pigBreed = new List<string>() { "KuneKune", "Hampshire", "Berkshire", "Chester White" };
         List<string> cowBreed = new List<string>() { "Angus", "Hereford", "Holstein", "Friesian" };
@@ -135,17 +135,16 @@ namespace FarmFeeding
         static void FarmFeeding()
         {
             // Decide which species is used
-            if (Species > 0)
-            {
-                int Species = CheckSpecies("Choose a species:\n" +
+            
+                int species = CheckSpecies("Choose a species:\n" +
                 "1. Sheep\n" +
                 "2. Pig\n" +
                 "3. Cow\n" +
                 "4. Chicken\n" +
                 "5. Quit\n", 1, 5);
-            }
+            
             // Decide which breed is used
-            else if (Sheep > 1) 
+            if (Sheep > 1) 
             {
                 int sheepBreed = CheckSheep("Choose a Sheep breed:\n" +
                     "1. Romney\n" +
@@ -182,9 +181,9 @@ namespace FarmFeeding
                     "5. Quit\n", 1, 5);
             }
 
-            if (Species != 5)
+            if (species != 5)
             {
-                Flag = 5;
+                return;
             }
 
         }
